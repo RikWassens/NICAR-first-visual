@@ -7,6 +7,14 @@
   <time datetime="2025-03-09" pubdate>March 9, 2025</time>
 {% endblock pubdate %}
 
-{% block paragraph %}
-This is a paragraph, hopefully.
-{% endblock paragraph %}
+{% block content %}
+{% for hp_homi in harvard_park_homicides %}
+{{ hp_homi.case_number }}, {{ hp_homi.slug}}
+    <ul>
+      <li>{{ hp_homi.first_name }} {{ hp_homi.last_name }}</li>
+      <li>{{ hp_homi.death_year }}</li>
+      <li>{{ hp_homi.longitude }}, {{hp_homi.latitude}}</li>
+    </ul>
+
+{% endfor %}
+{% endblock %}
